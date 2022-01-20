@@ -1,0 +1,56 @@
+
+
+<p class="titulo">Agregar Producto</p>
+
+
+
+<ng-form  class="formulario">
+
+    <mat-form-field appearance="fill">
+        <mat-label >Nombre Producto</mat-label>
+        <input matInput [(ngModel)]="producto.nombre_producto" name="nombre producto" required="true">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label >Valor Producto</mat-label>
+        <input type="number" matInput [(ngModel)]="producto.valor" name="valor producto" required="true">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccione Estado</mat-label>
+        <mat-select name="estado" [(ngModel)]="producto.estado" name="estado producto" required="true">
+            <mat-option  [value]="0">
+                No Disponible
+            </mat-option>
+            <mat-option  [value]="1">
+                Disponible
+            </mat-option>
+        </mat-select>
+        
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label >Seleccione Marca</mat-label >
+        <mat-select [(ngModel)]="producto.id_marca" name="marca" required="true">
+            <mat-option *ngFor="let marca of listarMarca" [value]="marca.id_marca" >
+                {{marca.nombre_marca}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="container-btn">
+        <button mat-raised-button (click)="validar()">Guardar</button>
+        <button mat-raised-button  (click)="cancelar()">Cancelar</button>
+    </div>
+
+    <p class="mensaje-alerta incompleto" *ngIf="mensajeAlerta"></p>
+    <p class="mensaje-alerta producto-invalido" *ngIf="productoInvalido"></p>
+    
+
+</ng-form >
+
+<!-- <p>{{producto.fecha_creacion | date:'yyyy-MM-d'}}</p> -->
+
+<!-- call sp_agregar_producto('undefined','949990','undefined','1','undefined');" -->

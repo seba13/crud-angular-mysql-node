@@ -1,0 +1,70 @@
+
+.titulo{
+    margin: 0px 0;
+    font-size: 2rem;
+    padding: 20px;
+    color: #fff;
+}
+
+.container-table{
+    padding-bottom: 50px;
+    position: relative;
+}
+
+table{
+    width: 100%;
+}
+
+
+.mat-header-cell,td{
+    text-align: center;
+}
+.enlace{
+    /* color: white; */
+    text-decoration: none;
+}
+.icon-edit, .enlace-edit{
+    color: #00b4d8;
+}
+.icon-delete, .enlace-delete{
+    color: #e5383b;
+}
+.enlace-delete{
+    cursor: pointer;
+}
+.mat-icon{
+    margin-left: 5px;
+}
+
+.mensaje-alerta{
+    color: #e5383b;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+    left: 10px;
+    /* transition: color .5 ease; */
+    animation: desplazar 1s  ease-in forwards, desaparecer  1.5s 4s ease forwards;
+    
+}
+
+.mensaje-alerta::after{
+    content:"Esta marca tiene productos asociados, por favor elimine primero los productos";
+    
+}
+
+@keyframes desplazar {
+    to{
+        opacity: 1;
+        transform-origin: top center;
+        transform: scale(1);
+    }
+}
+
+@keyframes desaparecer {
+    to{
+        opacity: 0;
+    }
+}

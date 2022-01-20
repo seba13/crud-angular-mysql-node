@@ -1,0 +1,39 @@
+
+
+.titulo{
+    margin: 0px 0;
+    font-size: 2rem;
+    padding: 20px;
+    color: #fff;
+}
+
+.container-table{
+    padding-bottom: 50px;
+}
+
+
+table{
+    width: 100%;
+    
+}
+
+.mat-header-cell,td{
+    text-align: center;
+}
+.enlace{
+    /* color: white; */
+    text-decoration: none;
+}
+.icon-edit, .enlace-edit{
+    color: #00b4d8;
+}
+.icon-delete, .enlace-delete{
+    color: #e5383b;
+}
+.enlace-delete{
+    cursor: pointer;
+}
+.mat-icon{
+    margin-left: 5px;
+}
+

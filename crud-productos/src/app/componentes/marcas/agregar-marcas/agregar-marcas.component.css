@@ -1,0 +1,80 @@
+.titulo{
+    margin: 0px 0;
+    font-size: 2rem;
+    padding: 20px;
+    color: #fff;
+}
+.formulario{
+    width: 100%;
+    min-height: 427px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #424242;
+    position: relative;
+}
+.mat-form-field{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.mat-form-field:first-child{
+    margin-top: 60px;
+}
+
+.mat-icon{
+    color: #fff;
+}
+
+.container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+.mat-raised-button:first-child{
+    background-color: #00b4d8;
+}
+.mat-raised-button:last-child{
+    background-color: #e5383b;
+}
+.mat-form-field{
+    color: #fff;
+}
+
+.mensaje-alerta{
+    color: #e5383b;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+    left: 10px;
+    /* transition: color .5 ease; */
+    animation: desplazar .5s  ease-in forwards, desaparecer  1.5s 4s ease forwards;
+    
+}
+
+.incompleto::after{
+    content: "CAMPOS INCOMPLETOS*";
+    
+}
+.marca-invalida::after{
+    content: "MARCA YA HA SIDO INGRESADA";
+}
+
+@keyframes desplazar {
+    to{
+        opacity: 1;
+        transform-origin: top center;
+        transform: scale(1);
+    }
+}
+
+@keyframes desaparecer {
+    to{
+        opacity: 0;
+    }
+}

@@ -1,0 +1,42 @@
+
+<p class="titulo">Agregar Marca</p>
+
+
+
+<ng-form  class="formulario">
+
+    <mat-form-field appearance="fill">
+        <mat-label >Nombre Marca</mat-label>
+        <input matInput [(ngModel)]="marca.nombre_marca" name="nombre marca" required>
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    
+
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccione Estado</mat-label>
+        <mat-select name="estado" [(ngModel)]="marca.estado" name="estado marca" required="true">
+            <mat-option  [value]="0">
+                No Disponible
+            </mat-option>
+            <mat-option  [value]="1">
+                Disponible
+            </mat-option>
+        </mat-select>
+        
+    </mat-form-field>
+
+  
+
+    <div class="container-btn">
+        <button mat-raised-button (click)="validar();">Guardar</button>
+        <button mat-raised-button  (click)="cancelar()">Cancelar</button>
+    </div>
+
+    <p class="mensaje-alerta incompleto" *ngIf="mensajeAlerta"></p>
+    <p class="mensaje-alerta marca-invalida" *ngIf="marcaInvalida"></p>
+
+</ng-form >
+
+<!-- <p>{{producto.fecha_creacion | date:'yyyy-MM-d'}}</p> -->
+
+<!-- call sp_agregar_producto('undefined','949990','undefined','1','undefined');" -->
